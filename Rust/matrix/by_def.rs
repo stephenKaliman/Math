@@ -1,9 +1,8 @@
-use std::mem
-use std::vec
+use std::vec;
 
-fn valid(A: Vec<Vec<i32>>, B: Vec<Vec<i32>>)
+fn valid(A: Vec<Vec<i32>>, B: Vec<Vec<i32>>) -> bool
 {
-    if A.len() > 0 && B.len() > 0 && A[0].len() > 0 && B[0].len() > 0 && A[0].len() == B.len())
+    if A.len() > 0 && B.len() > 0 && A[0].len() > 0 && B[0].len() > 0 && A[0].len() == B.len()
     {
         return true;
     }
@@ -14,18 +13,18 @@ fn valid(A: Vec<Vec<i32>>, B: Vec<Vec<i32>>)
 }
 
 
-fn multiply(A: Vec<Vec<i32>>, B: Vec<Vec<i32>>)
+fn multiply(A: Vec<Vec<i32>>, B: Vec<Vec<i32>>) -> Vec<Vec<i32>>
 {
-    if !valid(A,B)
+    if !(valid(A,B))
     {
-        return None;
+        return vec![];
     }
 
     let m = A.len();
     let n = A[0].len();
     let p = B[0].len();
 
-    let C = vec![vec![0; m]; p]
+    let mut C = vec![vec![0; m]; p];
 
     for i in 0..m
     {

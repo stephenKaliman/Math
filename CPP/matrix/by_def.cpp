@@ -2,19 +2,23 @@
 
 using namespace std;
 
-bool valid(vector<int> A, vector<int> B)
+bool valid(vector<vector<int>> A, vector<vector<int>> B)
 {
 	if(A.size() > 0 && B.size() > 0 &&
 			A[0].size() > 0 && B[0].size() > 0 &&
 			A[0].size() == B.size())
+	{
 		return true;
+	}
 	else
+	{
 		return false;
+	}
 }
 
-vector<vector<int>> multiply(vector<int> A, vector<int> B)
+vector<vector<int>> multiply(vector<vector<int>> A, vector<vector<int>> B)
 {
-	if(!valid(A,B)) return NULL;
+	if(!valid(A,B)) return {};
 
 	size_t m = A.size();
 	size_t n = A[0].size();
